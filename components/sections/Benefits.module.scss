@@ -1,0 +1,78 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  background: $color-bg-secondary;
+}
+
+.container {
+  @include container;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-xl;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+
+  &:not(.visible) .card {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  &.visible .card {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  @include premium-card;
+  transition: opacity 0.7s ease, transform 0.7s ease,
+    border-color $transition-smooth, box-shadow $transition-smooth;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $space-lg;
+}
+
+.number {
+  font-family: $font-serif;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: rgba(198, 167, 94, 0.12);
+  line-height: 1;
+}
+
+.icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-md;
+  background: rgba(198, 167, 94, 0.06);
+  border: 1px solid $color-border;
+  color: $color-gold;
+}
+
+.cardTitle {
+  font-family: $font-serif;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $space-sm;
+}
+
+.cardDesc {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  line-height: $line-height-relaxed;
+}

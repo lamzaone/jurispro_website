@@ -1,0 +1,113 @@
+// ============================================
+// GLOBAL STYLES — Ultra Premium Law Firm
+// ============================================
+
+@use '../styles/variables' as *;
+@use '../styles/animations';
+
+// Reset & Base
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  color: $color-text-primary;
+  background-color: $color-bg-primary;
+  overflow-x: hidden;
+}
+
+// Typography base
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-serif;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: $color-text-primary;
+}
+
+p {
+  font-family: $font-sans;
+  line-height: $line-height-relaxed;
+  color: $color-text-secondary;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color $transition-base;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: $font-sans;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+input,
+textarea,
+select {
+  font-family: $font-sans;
+  outline: none;
+}
+
+// Selection color
+::selection {
+  background: rgba(198, 167, 94, 0.3);
+  color: $color-text-primary;
+}
+
+// Scrollbar styling
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(198, 167, 94, 0.3);
+  border-radius: $radius-full;
+
+  &:hover {
+    background: rgba(198, 167, 94, 0.5);
+  }
+}
+
+// Screen reader only utility
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

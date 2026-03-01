@@ -1,0 +1,66 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-sans;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.02em;
+  border-radius: $radius-full;
+  cursor: pointer;
+  transition: all $transition-base;
+  text-decoration: none;
+  white-space: nowrap;
+
+  // Size: default
+  &.default {
+    padding: 14px $space-xl;
+    font-size: $font-size-sm;
+  }
+
+  // Size: large
+  &.large {
+    padding: 18px $space-2xl;
+    font-size: $font-size-base;
+
+    @include mobile {
+      padding: 16px $space-xl;
+      font-size: $font-size-sm;
+    }
+  }
+
+  // Variant: primary (gold filled)
+  &.primary {
+    color: $color-bg-primary;
+    background: $gradient-gold;
+    border: none;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-gold-lg;
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  // Variant: outline
+  &.outline {
+    color: $color-gold;
+    background: transparent;
+    border: 1px solid $color-gold;
+
+    &:hover {
+      background: rgba(198, 167, 94, 0.1);
+      box-shadow: $shadow-gold;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}

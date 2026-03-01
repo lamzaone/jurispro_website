@@ -1,0 +1,197 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: $navbar-height;
+}
+
+// Parallax background
+.parallaxBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  will-change: transform;
+}
+
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(198, 167, 94, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(198, 167, 94, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.glowOrb {
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(198, 167, 94, 0.06) 0%, transparent 70%);
+  filter: blur(60px);
+  animation: float 8s ease-in-out infinite;
+}
+
+.glowOrbSecondary {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(198, 167, 94, 0.04) 0%, transparent 70%);
+  filter: blur(80px);
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+// Content
+.container {
+  @include container;
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+  animation: heroFadeIn 1s ease 0.2s forwards;
+  opacity: 0;
+
+  @include mobile {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+// Badge
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-xs;
+  padding: $space-xs $space-md;
+  border-radius: $radius-full;
+  border: 1px solid $color-border;
+  background: rgba(198, 167, 94, 0.05);
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  color: $color-gold;
+  letter-spacing: 0.04em;
+  width: fit-content;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $color-gold;
+  animation: pulseGlow 2s ease infinite;
+}
+
+// Title
+.title {
+  font-family: $font-serif;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  line-height: 1.15;
+  color: $color-text-primary;
+
+  @include tablet-up {
+    font-size: $font-size-5xl;
+  }
+
+  @include desktop-up {
+    font-size: $font-size-hero;
+  }
+}
+
+.titleAccent {
+  @include gold-text;
+}
+
+// Subtitle
+.subtitle {
+  @include body-text;
+  max-width: 560px;
+  font-size: $font-size-md;
+}
+
+// CTAs
+.ctas {
+  display: flex;
+  gap: $space-md;
+  flex-wrap: wrap;
+
+  @include mobile {
+    flex-direction: column;
+    width: 100%;
+
+    a {
+      width: 100%;
+    }
+  }
+}
+
+// Microcopy
+.microcopy {
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  margin-top: $space-xs;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+// Scroll indicator
+.scrollIndicator {
+  position: absolute;
+  bottom: $space-xl;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, $color-gold 0%, transparent 100%);
+  animation: scrollPulse 2s ease infinite;
+}
+
+// Animations
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(0, -30px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; box-shadow: 0 0 4px rgba(198, 167, 94, 0.4); }
+  50% { opacity: 0.6; box-shadow: 0 0 12px rgba(198, 167, 94, 0.6); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}

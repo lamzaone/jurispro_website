@@ -1,0 +1,257 @@
+// ============================================
+// MIXINS — Reusable style utilities
+// ============================================
+
+@use 'variables' as *;
+
+// Responsive breakpoints
+@mixin mobile {
+  @media (max-width: ($breakpoint-md - 1px)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $breakpoint-md) and (max-width: ($breakpoint-lg - 1px)) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin xl-up {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+// Container
+@mixin container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $space-lg;
+
+  @include desktop-up {
+    padding: 0 $space-2xl;
+  }
+}
+
+@mixin container-lg {
+  width: 100%;
+  max-width: $max-width-lg;
+  margin: 0 auto;
+  padding: 0 $space-lg;
+
+  @include desktop-up {
+    padding: 0 $space-2xl;
+  }
+}
+
+// Section spacing
+@mixin section-padding {
+  padding: $space-4xl 0;
+
+  @include mobile {
+    padding: $space-3xl 0;
+  }
+}
+
+// Flexbox helpers
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Gold gradient text
+@mixin gold-text {
+  background: $gradient-gold-text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Gold border glow effect
+@mixin gold-border-glow {
+  border: 1px solid $color-border;
+  transition: border-color $transition-base, box-shadow $transition-base;
+
+  &:hover {
+    border-color: $color-border-hover;
+    box-shadow: $shadow-gold;
+  }
+}
+
+// Animated gold border button
+@mixin gold-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-sm $space-xl;
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $color-bg-primary;
+  background: $gradient-gold;
+  border: none;
+  border-radius: $radius-full;
+  cursor: pointer;
+  transition: transform $transition-base, box-shadow $transition-base;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-gold-lg;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Outlined gold button
+@mixin gold-button-outline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-sm $space-xl;
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-gold;
+  background: transparent;
+  border: 1px solid $color-gold;
+  border-radius: $radius-full;
+  cursor: pointer;
+  transition: all $transition-base;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+
+  &:hover {
+    background: rgba(198, 167, 94, 0.1);
+    box-shadow: $shadow-gold;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Scroll reveal animation
+@mixin scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Card style
+@mixin premium-card {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  padding: $space-xl;
+  transition: all $transition-smooth;
+
+  &:hover {
+    border-color: $color-border-hover;
+    box-shadow: $shadow-gold;
+    transform: translateY(-4px);
+  }
+}
+
+// Heading styles
+@mixin heading-xl {
+  font-family: $font-serif;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: $color-text-primary;
+
+  @include desktop-up {
+    font-size: $font-size-hero;
+  }
+}
+
+@mixin heading-lg {
+  font-family: $font-serif;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: $color-text-primary;
+
+  @include desktop-up {
+    font-size: $font-size-4xl;
+  }
+}
+
+@mixin heading-md {
+  font-family: $font-serif;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-tight;
+  color: $color-text-primary;
+
+  @include desktop-up {
+    font-size: $font-size-2xl;
+  }
+}
+
+// Body text
+@mixin body-text {
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-relaxed;
+  color: $color-text-secondary;
+
+  @include desktop-up {
+    font-size: $font-size-md;
+  }
+}
+
+// Label / overline
+@mixin overline {
+  font-family: $font-sans;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $color-gold;
+}

@@ -1,0 +1,169 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  background: $color-bg-secondary;
+  border-top: 1px solid $color-border;
+  padding-top: $space-4xl;
+  padding-bottom: $space-xl;
+}
+
+.container {
+  @include container;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: $space-3xl;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+    gap: $space-2xl;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: $space-2xl;
+  }
+}
+
+// Brand
+.brand {
+  max-width: 320px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+  margin-bottom: $space-lg;
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-md;
+  background: $gradient-gold;
+  color: $color-bg-primary;
+  font-family: $font-serif;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-sm;
+}
+
+.logoText {
+  font-family: $font-serif;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.logoAccent {
+  color: $color-gold;
+}
+
+.brandDesc {
+  @include body-text;
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  line-height: $line-height-relaxed;
+}
+
+// Columns
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.columnTitle {
+  font-family: $font-sans;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $color-gold;
+  margin-bottom: $space-lg;
+}
+
+.linksList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+
+  a {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    transition: color $transition-base;
+
+    &:hover {
+      color: $color-gold;
+    }
+  }
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  a, span {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    transition: color $transition-base;
+  }
+
+  a:hover {
+    color: $color-gold;
+  }
+}
+
+.contactLabel {
+  font-size: $font-size-xs !important;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $color-text-secondary !important;
+}
+
+// Bottom bar
+.bottomBar {
+  @include flex-between;
+  margin-top: $space-3xl;
+  padding-top: $space-xl;
+  border-top: 1px solid $color-border;
+
+  @include mobile {
+    flex-direction: column;
+    gap: $space-md;
+    text-align: center;
+  }
+}
+
+.copyright {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}
+
+.legalLinks {
+  display: flex;
+  gap: $space-lg;
+
+  a {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    transition: color $transition-base;
+
+    &:hover {
+      color: $color-gold;
+    }
+  }
+}

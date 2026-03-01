@@ -1,0 +1,100 @@
+// ============================================
+// ANIMATIONS — Premium micro-interactions
+// ============================================
+
+@use 'variables' as *;
+
+// Fade in up
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Fade in
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+// Slide in from left
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Slide in from right
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Scale in
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Shimmer / gold shine sweep
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+// Pulse glow
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(198, 167, 94, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(198, 167, 94, 0.3);
+  }
+}
+
+// Float
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+// Counter count-up (for social proof)
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+// Line expand (for decorative lines)
+@keyframes lineExpand {
+  from { width: 0; }
+  to { width: 60px; }
+}
+
+// Stagger delay utility classes
+@for $i from 1 through 10 {
+  .stagger-#{$i} {
+    animation-delay: #{$i * 0.1}s;
+  }
+}

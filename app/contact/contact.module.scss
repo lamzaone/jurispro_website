@@ -1,0 +1,368 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.page {
+  padding-bottom: 80px; // space for sticky CTA on mobile
+
+  @include tablet-up {
+    padding-bottom: 0;
+  }
+}
+
+// Page hero
+.pageHero {
+  padding-top: calc($navbar-height + $space-4xl);
+  padding-bottom: $space-3xl;
+  background: $color-bg-primary;
+  text-align: center;
+}
+
+.container {
+  @include container;
+}
+
+.overline {
+  @include overline;
+  display: block;
+  margin-bottom: $space-md;
+}
+
+.pageTitle {
+  @include heading-xl;
+  margin-bottom: $space-lg;
+}
+
+.accent {
+  @include gold-text;
+}
+
+.pageSubtitle {
+  @include body-text;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+// Contact section
+.contactSection {
+  @include section-padding;
+  background: $color-bg-secondary;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: $space-2xl;
+  align-items: start;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Form card
+.formCard {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  padding: $space-2xl;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @include mobile {
+    padding: $space-xl;
+  }
+}
+
+.formTitle {
+  font-family: $font-serif;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $space-xl;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+  flex: 1;
+}
+
+.fieldRow {
+  display: flex;
+  gap: $space-lg;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.label {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-secondary;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 14px $space-md;
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  color: $color-text-primary;
+  background: $color-bg-primary;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  transition: border-color $transition-base, box-shadow $transition-base;
+
+  &::placeholder {
+    color: $color-text-muted;
+  }
+
+  &:focus {
+    border-color: $color-gold;
+    box-shadow: 0 0 0 3px rgba(198, 167, 94, 0.1);
+  }
+}
+
+.select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23777' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+
+  option {
+    background: $color-bg-primary;
+    color: $color-text-primary;
+  }
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submitButton {
+  @include gold-button;
+  width: 100%;
+  padding: 16px;
+  font-size: $font-size-base;
+}
+
+.microcopy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-xs;
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}
+
+// Success state
+.successMessage {
+  @include flex-center;
+  flex-direction: column;
+  gap: $space-lg;
+  padding: $space-3xl $space-xl;
+  text-align: center;
+}
+
+.successIcon {
+  animation: scaleIn 0.5s ease;
+}
+
+.successTitle {
+  font-family: $font-serif;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-gold;
+}
+
+.successText {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  max-width: 400px;
+  line-height: $line-height-relaxed;
+}
+
+// Info panel
+.infoPanel {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xl;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.infoCard {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  padding: $space-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+}
+
+.infoTitle {
+  font-family: $font-serif;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  padding-bottom: $space-md;
+  border-bottom: 1px solid $color-border;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-md;
+}
+
+.infoIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-md;
+  background: rgba(198, 167, 94, 0.06);
+  border: 1px solid $color-border;
+  flex-shrink: 0;
+}
+
+.infoLabel {
+  display: block;
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: $font-weight-medium;
+  margin-bottom: 2px;
+}
+
+.infoValue {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  transition: color $transition-base;
+  text-decoration: none;
+  display: block;
+
+  &.infoLink {
+    cursor: pointer;
+
+    &:hover {
+      color: $color-gold;
+    }
+  }
+}
+
+// Map placeholder
+.mapPlaceholder {
+  height: 200px;
+  border-radius: $radius-lg;
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  overflow: hidden;
+  position: relative;
+  background-image:
+    linear-gradient(rgba(198, 167, 94, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(198, 167, 94, 0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.mapOverlay {
+  @include flex-center;
+  flex-direction: column;
+  gap: $space-sm;
+  height: 100%;
+  color: $color-text-muted;
+  font-size: $font-size-sm;
+}
+
+// Trust badges
+.trustBadges {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-md;
+}
+
+.trustBadge {
+  text-align: center;
+  padding: $space-lg;
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+}
+
+.trustValue {
+  display: block;
+  font-family: $font-serif;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  @include gold-text;
+  line-height: 1;
+  margin-bottom: $space-xs;
+}
+
+.trustLabel {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  letter-spacing: 0.04em;
+}
+
+// Sticky mobile CTA
+.stickyCta {
+  display: none;
+
+  @include mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-xs;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: $space-md;
+    background: $gradient-gold;
+    color: $color-bg-primary;
+    font-family: $font-sans;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    text-decoration: none;
+    z-index: $z-sticky;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

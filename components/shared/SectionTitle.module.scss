@@ -1,0 +1,52 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.sectionTitle {
+  margin-bottom: $space-3xl;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.centered {
+    text-align: center;
+
+    .goldLine {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.overline {
+  @include overline;
+  display: block;
+  margin-bottom: $space-sm;
+}
+
+.title {
+  @include heading-lg;
+  margin-bottom: $space-md;
+}
+
+.goldLine {
+  width: 60px;
+  height: 3px;
+  background: $gradient-gold;
+  border-radius: $radius-full;
+  margin-bottom: $space-md;
+}
+
+.subtitle {
+  @include body-text;
+  max-width: 600px;
+
+  .centered & {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

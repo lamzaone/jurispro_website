@@ -1,0 +1,96 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  background: $color-bg-secondary;
+}
+
+.container {
+  @include container;
+}
+
+.accordion {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.item {
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  background: $color-bg-card;
+  overflow: hidden;
+  transition: border-color $transition-base, box-shadow $transition-base;
+
+  &:hover {
+    border-color: $color-border-hover;
+  }
+
+  &.open {
+    border-color: rgba(198, 167, 94, 0.3);
+    box-shadow: $shadow-gold;
+
+    .chevron {
+      transform: rotate(180deg);
+    }
+
+    .answer {
+      max-height: 300px;
+      opacity: 1;
+    }
+  }
+}
+
+.question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-lg $space-xl;
+  font-family: $font-sans;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  text-align: left;
+  cursor: pointer;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $color-gold;
+  }
+
+  @include mobile {
+    padding: $space-md $space-lg;
+    font-size: $font-size-sm;
+  }
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: $color-gold;
+  transition: transform $transition-smooth;
+}
+
+.answer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.answerInner {
+  padding: 0 $space-xl $space-lg;
+
+  p {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    line-height: $line-height-relaxed;
+  }
+
+  @include mobile {
+    padding: 0 $space-lg $space-md;
+  }
+}
