@@ -26,6 +26,16 @@
     background: radial-gradient(circle, rgba(198, 167, 94, 0.06) 0%, transparent 70%);
     pointer-events: none;
   }
+
+  @include mobile {
+    padding-top: calc($navbar-height + $space-2xl);
+    padding-bottom: $space-xl;
+
+    &::before {
+      width: 400px;
+      height: 400px;
+    }
+  }
 }
 
 .container {
@@ -75,6 +85,15 @@
     color: $color-gold;
     flex-shrink: 0;
   }
+
+  @include mobile {
+    font-size: $font-size-xs;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
 }
 
 /* ─────────────────────────── Pricing cards ──────────────────────────── */
@@ -94,6 +113,11 @@
     max-width: 480px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    margin-top: $space-2xl;
   }
 }
 
@@ -116,6 +140,11 @@
   &.featured {
     border-color: $color-gold;
     box-shadow: 0 0 0 1px $color-gold, 0 24px 48px -12px rgba(198, 167, 94, 0.15);
+  }
+
+  @include mobile {
+    padding: $space-lg;
+    gap: $space-md;
   }
 }
 
@@ -210,6 +239,7 @@
 
   @include mobile {
     grid-template-columns: 1fr;
+    margin-top: $space-2xl;
   }
 }
 
@@ -232,6 +262,12 @@
 
   &:hover {
     border-color: rgba(198, 167, 94, 0.3);
+  }
+
+  @include mobile {
+    padding: $space-lg;
+    gap: $space-md;
+    flex-direction: column;
   }
 }
 
@@ -291,6 +327,12 @@
   @include tablet {
     grid-template-columns: 1fr;
     gap: $space-xl;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: $space-2xl;
+    margin-top: $space-2xl;
   }
 }
 
@@ -382,6 +424,15 @@
     border-radius: 50%;
     background: radial-gradient(circle, rgba(198, 167, 94, 0.05) 0%, transparent 70%);
     pointer-events: none;
+  }
+
+  @include mobile {
+    padding: $space-3xl 0;
+
+    &::before {
+      width: 300px;
+      height: 300px;
+    }
   }
 
   .container {
