@@ -30,6 +30,7 @@ export default function Footer() {
             <ul className={styles.linksList}>
               <li><Link href="/">Acasa</Link></li>
               <li><Link href="/servicii">Servicii</Link></li>
+              <li><Link href="/servicii/social-media">Social Media</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
@@ -42,6 +43,7 @@ export default function Footer() {
               <li><Link href="/servicii">Infiintare PFA</Link></li>
               <li><Link href="/servicii">Modificari firma</Link></li>
               <li><Link href="/servicii">Consultanta juridica</Link></li>
+              <li><Link href="/servicii/social-media">Social Media</Link></li>
             </ul>
           </div>
 

@@ -15,8 +15,25 @@
   grid-template-columns: repeat(2, 1fr);
   gap: $space-xl;
 
+  // The 5th card (social media) centered on its own row
+  & > *:nth-child(5) {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    justify-self: center;
+  }
+
+  @include tablet {
+    & > *:nth-child(5) {
+      max-width: 100%;
+    }
+  }
+
   @include mobile {
     grid-template-columns: 1fr;
+
+    & > *:nth-child(5) {
+      max-width: none;
+    }
   }
 
   &:not(.visible) .card {

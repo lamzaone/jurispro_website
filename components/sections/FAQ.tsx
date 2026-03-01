@@ -29,6 +29,10 @@ const FAQ_ITEMS = [
     question: 'Ce diferentiaza JuridicConsult de alte firme?',
     answer: 'Experienta de peste 10 ani, transparenta totala in privinta costurilor, comunicare constanta si suport dupa finalizarea procesului. 98% dintre clientii nostri revin sau ne recomanda.',
   },
+  {
+    question: 'Oferiti si servicii de social media?',
+    answer: 'Da, oferim pachete complete de administrare social media pentru Instagram, Facebook si TikTok. Fiecare pachet include continut personalizat, design profesional, video-uri scurte si strategie de comunicare coerenta. Pachetele pornesc de la 200 EUR pe luna.',
+  },
 ];
 
 /**

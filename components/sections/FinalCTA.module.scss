@@ -59,6 +59,22 @@
 
 .subtitle {
   @include body-text;
-  max-width: 500px;
+  max-width: 520px;
   text-align: center;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: $space-md;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include mobile {
+    flex-direction: column;
+    width: 100%;
+
+    a {
+      width: 100%;
+    }
+  }
 }

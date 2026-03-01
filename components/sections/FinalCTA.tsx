@@ -18,15 +18,20 @@ export default function FinalCTA() {
         <h2 className={styles.title}>
           Fa primul pas spre
           <br />
-          <span className={styles.accent}>afacerea ta.</span>
+          <span className={styles.accent}>afacerea ta de succes.</span>
         </h2>
         <p className={styles.subtitle}>
-          Completeaza formularul si te contactam noi in maxim 24 de ore.
-          Consultanta initiala este gratuita.
+          Fie ca ai nevoie de servicii juridice sau de o prezenta online profesionala,
+          te contactam noi in maxim 24 de ore. Consultanta initiala este gratuita.
         </p>
-        <PremiumButton href="/contact" variant="primary" size="large">
-          Incepe acum
-        </PremiumButton>
+        <div className={styles.ctaButtons}>
+          <PremiumButton href="/contact" variant="primary" size="large">
+            Solicita oferta gratuita
+          </PremiumButton>
+          <PremiumButton href="/servicii/social-media" variant="outline" size="large">
+            Descopera Social Media
+          </PremiumButton>
+        </div>
       </div>
     </section>
   );

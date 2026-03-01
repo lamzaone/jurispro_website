@@ -32,6 +32,15 @@ const PROBLEMS = [
     title: 'Timp pretios pierdut',
     desc: 'Saptamani de asteptare si confuzie in loc sa te concentrezi pe afacerea ta.',
   },
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    title: 'Lipsa prezentei online',
+    desc: 'Social media fara strategie, postari rare sau lipsa totala de vizibilitate digitala.',
+  },
 ];
 
 const SOLUTIONS = [
@@ -62,6 +71,15 @@ const SOLUTIONS = [
     title: 'Siguranta juridica totala',
     desc: 'Totul este realizat conform legislatiei in vigoare.',
   },
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    title: 'Crestere digitala reala',
+    desc: 'Strategie de social media construita pe obiective de business, nu la intamplare.',
+  },
 ];
 
 /**
@@ -78,7 +96,7 @@ export default function ProblemSolution() {
         <SectionTitle
           overline="De ce noi"
           title="Birocratia nu ar trebui sa iti incetineasca visul."
-          subtitle="Multi antreprenori pierd timp si energie cu proceduri administrative. Noi eliminam aceasta povara."
+          subtitle="Multi antreprenori pierd timp cu birocratia si ignora prezenta online. Noi rezolvam ambele probleme."
         />
 
         {/* Problems */}

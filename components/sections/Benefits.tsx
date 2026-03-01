@@ -46,6 +46,16 @@ const BENEFITS = [
       </svg>
     ),
   },
+  {
+    number: '05',
+    title: 'Prezenta digitala profesionala',
+    desc: 'Nu doar firma pe hartie — construim si prezenta ta online cu strategie de social media, continut si design profesional.',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+  },
 ];
 
 /**
@@ -60,7 +70,7 @@ export default function Benefits() {
         <SectionTitle
           overline="Beneficii"
           title="De ce sa alegi JuridicConsult?"
-          subtitle="Peste 10 ani de experienta in servicii juridice pentru antreprenori din Romania."
+          subtitle="Peste 10 ani de experienta in servicii juridice si digitale pentru antreprenori din Romania."
         />
 
         <div ref={ref} className={`${styles.grid} ${isVisible ? styles.visible : ''}`}>

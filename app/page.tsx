@@ -1,6 +1,7 @@
 import Hero from '@/components/sections/Hero';
 import ProblemSolution from '@/components/sections/ProblemSolution';
 import Benefits from '@/components/sections/Benefits';
+import SocialMediaPreview from '@/components/sections/SocialMediaPreview';
 import SocialProof from '@/components/sections/SocialProof';
 import FAQ from '@/components/sections/FAQ';
 import FinalCTA from '@/components/sections/FinalCTA';
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Hero />
       <ProblemSolution />
       <Benefits />
+      <SocialMediaPreview />
       <SocialProof />
       <FAQ />
       <FinalCTA />

@@ -31,6 +31,12 @@ const ConsultantaIcon = () => (
   </svg>
 );
 
+const SocialMediaIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+    <path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
 const SERVICES = [
   {
     icon: <SrlIcon />,
@@ -88,6 +94,21 @@ const SERVICES = [
     price: '200 RON / ora',
     timeline: 'La cerere',
   },
+  {
+    icon: <SocialMediaIcon />,
+    title: 'Servicii Social Media',
+    description: 'Strategie, continut si crestere reala pentru prezenta ta online pe Instagram, Facebook si TikTok.',
+    benefits: [
+      'Continut personalizat pentru brand',
+      'Video-uri scurte pentru impact maxim',
+      'Texte optimizate pentru engagement',
+      'Design profesional',
+      'Strategie de comunicare coerenta',
+    ],
+    price: 'De la 200 EUR / luna',
+    timeline: 'Continuu',
+    href: '/servicii/social-media',
+  },
 ];
 
 const STEPS = [
@@ -123,12 +144,12 @@ export default function ServiciiContent() {
         <div className={styles.container}>
           <span className={styles.overline}>Serviciile noastre</span>
           <h1 className={styles.pageTitle}>
-            Solutii juridice complete
+            Solutii juridice si digitale
             <br />
             <span className={styles.accent}>pentru antreprenori.</span>
           </h1>
           <p className={styles.pageSubtitle}>
-            De la infiintare pana la consultanta continua, acoperim toate nevoile juridice ale afacerii tale.
+            De la infiintare pana la consultanta continua si prezenta online, acoperim toate nevoile afacerii tale.
           </p>
         </div>
       </section>
@@ -140,6 +161,73 @@ export default function ServiciiContent() {
             {SERVICES.map((service, idx) => (
               <ServiceCard key={idx} {...service} delay={idx * 120} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Social media feature highlight */}
+      <section className={styles.smHighlight} aria-label="Social Media highlight">
+        <div className={styles.container}>
+          <div className={styles.smHighlightInner}>
+            <div className={styles.smHighlightContent}>
+              <span className={styles.smOverline}>Nou</span>
+              <h2 className={styles.smTitle}>
+                Social media cu strategie,
+                <br />
+                <span className={styles.accent}>nu la intamplare.</span>
+              </h2>
+              <p className={styles.smDesc}>
+                O prezenta online eficienta nu inseamna sa postezi mult. Inseamna sa postezi corect.
+                Continut optimizat pentru Instagram, Facebook si TikTok, construit pe strategie,
+                logica de business si obiective clare.
+              </p>
+              <div className={styles.smFeatures}>
+                <div className={styles.smFeature}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C6A75E" strokeWidth="1.5" aria-hidden="true">
+                    <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  <span>Pachete de la 200 EUR / luna</span>
+                </div>
+                <div className={styles.smFeature}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C6A75E" strokeWidth="1.5" aria-hidden="true">
+                    <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  <span>Continut video, design si copywriting</span>
+                </div>
+                <div className={styles.smFeature}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C6A75E" strokeWidth="1.5" aria-hidden="true">
+                    <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  <span>Strategie bazata pe psihologia clientului</span>
+                </div>
+              </div>
+              <PremiumButton href="/servicii/social-media" variant="primary">
+                Descopera pachetele Social Media
+              </PremiumButton>
+            </div>
+            <div className={styles.smHighlightVisual} aria-hidden="true">
+              <div className={styles.smPlatform}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <rect x="2" y="2" width="20" height="20" rx="5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="12" cy="12" r="5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+                </svg>
+                <span>Instagram</span>
+              </div>
+              <div className={styles.smPlatform}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <span>Facebook</span>
+              </div>
+              <div className={styles.smPlatform}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M9 12a3 3 0 106 0 3 3 0 00-6 0zm3-9C6.5 3 2 7.5 2 12s4.5 9 10 9 10-4.5 10-9-4.5-9-10-9z" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M15 8.5c1 1 1.5 2.2 1.5 3.5" strokeLinecap="round"/>
+                </svg>
+                <span>TikTok</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

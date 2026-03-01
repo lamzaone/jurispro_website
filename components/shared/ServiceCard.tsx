@@ -14,6 +14,7 @@ interface ServiceCardProps {
   price: string;
   timeline: string;
   delay?: number;
+  href?: string;
 }
 
 /**
@@ -28,6 +29,7 @@ export default function ServiceCard({
   price,
   timeline,
   delay = 0,
+  href,
 }: ServiceCardProps) {
   const { ref, isVisible } = useScrollReveal();
 
@@ -63,9 +65,15 @@ export default function ServiceCard({
         </div>
       </div>
 
-      <PremiumButton href="/contact" variant="outline">
-        Solicita oferta
-      </PremiumButton>
+      {href ? (
+        <PremiumButton href={href} variant="primary">
+          Vezi pachete si preturi
+        </PremiumButton>
+      ) : (
+        <PremiumButton href="/contact" variant="outline">
+          Solicita oferta
+        </PremiumButton>
+      )}
     </article>
   );
 }

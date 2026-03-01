@@ -10,6 +10,7 @@ import styles from './Navbar.module.scss';
 const NAV_LINKS = [
   { href: '/', label: 'Acasa' },
   { href: '/servicii', label: 'Servicii' },
+  { href: '/servicii/social-media', label: 'Social Media' },
   { href: '/contact', label: 'Contact' },
 ];
 

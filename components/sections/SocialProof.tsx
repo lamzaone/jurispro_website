@@ -10,6 +10,7 @@ const STATS = [
   { value: '10+', label: 'Ani experienta' },
   { value: '98%', label: 'Clienti recurenti' },
   { value: '24h', label: 'Timp de raspuns' },
+  { value: '50+', label: 'Branduri gestionate online' },
 ];
 
 const TESTIMONIALS = [

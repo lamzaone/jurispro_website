@@ -45,15 +45,15 @@ export default function Hero() {
 
           {/* Headline */}
           <h1 className={styles.title}>
-            Infiinteaza-ti firma
+            Firma ta, prezenta ta online
             <br />
-            <span className={styles.titleAccent}>rapid, legal si fara complicatii.</span>
+            <span className={styles.titleAccent}>totul incepe aici.</span>
           </h1>
 
           {/* Subtitle */}
           <p className={styles.subtitle}>
-            Ne ocupam noi de tot procesul, iar tu te concentrezi pe dezvoltarea afacerii.
-            Consultanta juridica premium pentru antreprenori ambitiosi.
+            De la infiintare si consultanta juridica pana la strategie de social media
+            — acoperim tot ce ai nevoie ca sa cresti. Solutii premium pentru antreprenori ambitiosi.
           </p>
 
           {/* CTAs */}
@@ -62,7 +62,10 @@ export default function Hero() {
               Solicita oferta gratuita
             </PremiumButton>
             <PremiumButton href="/servicii" variant="outline" size="large">
-              Vezi serviciile
+              Servicii juridice
+            </PremiumButton>
+            <PremiumButton href="/servicii/social-media" variant="outline" size="large">
+              Social Media
             </PremiumButton>
           </div>
 
@@ -71,7 +74,7 @@ export default function Hero() {
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M8 1L10 5.5L15 6.2L11.5 9.5L12.4 14.5L8 12.2L3.6 14.5L4.5 9.5L1 6.2L6 5.5L8 1Z" fill="#C6A75E"/>
             </svg>
-            Raspundem in maxim 24h &bull; Consultanta initiala gratuita
+            Raspundem in maxim 24h &bull; Consultanta initiala gratuita &bull; Servicii juridice si digitale
           </p>
         </div>
       </div>

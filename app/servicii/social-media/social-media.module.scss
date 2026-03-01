@@ -1,0 +1,409 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+/* ───────────────────────────── Page hero ───────────────────────────── */
+.page {
+  padding-top: 0;
+}
+
+.pageHero {
+  padding-top: calc($navbar-height + $space-4xl);
+  padding-bottom: $space-3xl;
+  background: $color-bg-primary;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(198, 167, 94, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+}
+
+.container {
+  @include container;
+}
+
+.overline {
+  @include overline;
+  display: block;
+  margin-bottom: $space-md;
+}
+
+.pageTitle {
+  @include heading-xl;
+  margin-bottom: $space-lg;
+}
+
+.accent {
+  @include gold-text;
+}
+
+.pageSubtitle {
+  @include body-text;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: $line-height-relaxed;
+}
+
+.platforms {
+  display: flex;
+  justify-content: center;
+  gap: $space-lg;
+  margin-top: $space-xl;
+  flex-wrap: wrap;
+}
+
+.platform {
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.02em;
+
+  svg {
+    color: $color-gold;
+    flex-shrink: 0;
+  }
+}
+
+/* ─────────────────────────── Pricing cards ──────────────────────────── */
+.pricingSection {
+  @include section-padding;
+  background: $color-bg-secondary;
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-xl;
+  margin-top: $space-3xl;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.pricingCard {
+  @include premium-card;
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease,
+    border-color $transition-smooth, box-shadow $transition-smooth;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.featured {
+    border-color: $color-gold;
+    box-shadow: 0 0 0 1px $color-gold, 0 24px 48px -12px rgba(198, 167, 94, 0.15);
+  }
+}
+
+.featuredBadge {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $color-gold;
+  color: $color-bg-primary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: $space-xs $space-lg;
+  border-radius: 0 0 $radius-sm $radius-sm;
+}
+
+.cardName {
+  font-family: $font-serif;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.cardPriceWrap {
+  display: flex;
+  align-items: baseline;
+  gap: $space-xs;
+}
+
+.cardPrice {
+  font-family: $font-serif;
+  font-size: 2.5rem;
+  font-weight: $font-weight-bold;
+  color: $color-gold;
+  line-height: 1;
+}
+
+.cardPricePer {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}
+
+.cardDivider {
+  width: 100%;
+  height: 1px;
+  background: $color-border;
+}
+
+.cardFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+  flex: 1;
+}
+
+.cardFeature {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-xs;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+
+  svg {
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+}
+
+.cardIncludes {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: $font-weight-medium;
+  margin-bottom: -$space-xs;
+}
+
+/* ───────────────────── Value propositions section ───────────────────── */
+.valueSection {
+  @include section-padding;
+  background: $color-bg-primary;
+}
+
+.valueGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-xl;
+  margin-top: $space-3xl;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.valueCard {
+  display: flex;
+  gap: $space-lg;
+  padding: $space-xl;
+  background: $color-bg-secondary;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease,
+    border-color $transition-smooth;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    border-color: rgba(198, 167, 94, 0.3);
+  }
+}
+
+.valueIcon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-md;
+  background: rgba(198, 167, 94, 0.08);
+  border: 1px solid $color-border;
+  color: $color-gold;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    stroke: $color-gold;
+    fill: none;
+    stroke-width: 1.5;
+  }
+}
+
+.valueContent {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+}
+
+.valueTitle {
+  font-family: $font-serif;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.valueDesc {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  line-height: $line-height-relaxed;
+}
+
+/* ────────────────────────── Promise section ─────────────────────────── */
+.promiseSection {
+  @include section-padding;
+  background: $color-bg-secondary;
+}
+
+.promiseGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-3xl;
+  margin-top: $space-3xl;
+  align-items: center;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: $space-xl;
+  }
+}
+
+.promiseLeft {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+}
+
+.promiseNotTitle {
+  font-family: $font-serif;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $space-sm;
+}
+
+.promiseNotList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.promiseNotItem {
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  line-height: $line-height-relaxed;
+
+  svg {
+    flex-shrink: 0;
+    color: rgba(255, 100, 100, 0.6);
+  }
+}
+
+.promiseRight {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+}
+
+.promiseYesTitle {
+  font-family: $font-serif;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-gold;
+  margin-bottom: $space-sm;
+}
+
+.promiseYesList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.promiseYesItem {
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+  font-size: $font-size-base;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-relaxed;
+
+  svg {
+    flex-shrink: 0;
+    color: $color-gold;
+  }
+}
+
+/* ───────────────────────────── Final CTA ────────────────────────────── */
+.ctaSection {
+  padding: $space-4xl 0;
+  background: $color-bg-primary;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(198, 167, 94, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-lg;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.ctaTagline {
+  @include overline;
+}
+
+.ctaTitle {
+  @include heading-lg;
+  max-width: 600px;
+}
+
+.ctaSubtitle {
+  @include body-text;
+  max-width: 520px;
+}
