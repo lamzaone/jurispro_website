@@ -36,7 +36,7 @@ const PACKAGES = [
   {
     name: 'Crestere',
     price: '300',
-    currency: 'USD',
+    currency: 'EUR',
     features: [
       '13 postari / luna',
       '5 video-uri scurte',
@@ -50,7 +50,7 @@ const PACKAGES = [
   {
     name: 'Premium',
     price: '500',
-    currency: 'USD',
+    currency: 'EUR',
     features: [
       '18 postari / luna',
       '8 video-uri scurte',

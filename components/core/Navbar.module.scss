@@ -76,6 +76,28 @@
   }
 }
 
+.navItem {
+  position: relative;
+}
+
+.navItemWithSubmenu {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 10px;
+  }
+
+  &:hover .submenu,
+  &:focus-within .submenu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+  }
+}
+
 .navLink {
   position: relative;
   font-family: $font-sans;
@@ -117,6 +139,48 @@
 .navLink:hover .linkIndicator {
   width: 100%;
   opacity: 0.6;
+}
+
+.submenu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translate(-50%, 6px);
+  min-width: 230px;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(16, 16, 16, 0.98);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity $transition-base, transform $transition-base;
+  z-index: $z-navbar + 1;
+}
+
+.submenuLink {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-family: $font-sans;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  color: $color-text-secondary;
+  text-decoration: none;
+  transition: color $transition-base, background-color $transition-base;
+
+  &:hover {
+    color: $color-text-primary;
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.submenuActive {
+  color: $color-text-primary;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 // CTA button in navbar
@@ -196,6 +260,12 @@
   gap: $space-md;
 }
 
+.mobileItem {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+}
+
 .mobileLink {
   font-family: $font-sans;
   font-size: $font-size-lg;
@@ -208,6 +278,30 @@
   &:hover,
   &.active {
     color: $color-gold;
+  }
+}
+
+.mobileSubmenu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: $space-md;
+}
+
+.mobileSubmenuLink {
+  font-family: $font-sans;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  color: $color-text-secondary;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color $transition-base, opacity $transition-base;
+  opacity: 0.9;
+
+  &:hover,
+  &.active {
+    color: $color-text-primary;
+    opacity: 1;
   }
 }
 

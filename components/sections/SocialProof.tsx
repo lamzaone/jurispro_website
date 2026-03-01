@@ -15,7 +15,7 @@ const STATS = [
 
 const TESTIMONIALS = [
   {
-    quote: 'Am reusit sa imi infiintez SRL-ul in mai putin de o saptamana. Echipa JuridicConsult a gestionat totul impecabil, iar eu nu a trebuit sa fac decat sa semnez. Recomand cu incredere!',
+    quote: 'Am reusit sa imi infiintez SRL-ul in mai putin de o saptamana. Echipa JurisProConsult a gestionat totul impecabil, iar eu nu a trebuit sa fac decat sa semnez. Recomand cu incredere!',
     name: 'Andrei Popescu',
     role: 'Fondator, TechStart SRL',
   },
@@ -25,7 +25,7 @@ const TESTIMONIALS = [
     role: 'Administrator, Design Studio SRL',
   },
   {
-    quote: 'Cea mai buna decizie a fost sa externalizez partea juridica catre JuridicConsult. Mi-am transformat PFA-ul in SRL fara niciun stres. Pret corect, servicii premium.',
+    quote: 'Cea mai buna decizie a fost sa externalizez partea juridica catre JurisProConsult. Mi-am transformat PFA-ul in SRL fara niciun stres. Pret corect, servicii premium.',
     name: 'Cristian Dumitrescu',
     role: 'Consultant independent',
   },

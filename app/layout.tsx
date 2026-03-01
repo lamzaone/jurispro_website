@@ -21,7 +21,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'JuridicConsult | Consultanta Juridica Premium pentru Antreprenori',
+  title: 'JurisProConsult | Consultanta Juridica Premium pentru Antreprenori',
   description:
     'Infiintare SRL, infiintare PFA, modificari firma si consultanta juridica pentru antreprenori din Romania. 500+ firme infiintate. Solicita oferta gratuita!',
   keywords: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     'avocat antreprenori',
   ],
   openGraph: {
-    title: 'JuridicConsult | Consultanta Juridica Premium',
+    title: 'JurisProConsult | Consultanta Juridica Premium',
     description: 'Infiintare SRL, PFA, modificari firma si consultanta juridica. 500+ firme infiintate.',
     type: 'website',
     locale: 'ro_RO',

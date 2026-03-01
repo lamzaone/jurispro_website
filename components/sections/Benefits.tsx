@@ -69,7 +69,7 @@ export default function Benefits() {
       <div className={styles.container}>
         <SectionTitle
           overline="Beneficii"
-          title="De ce sa alegi JuridicConsult?"
+          title="De ce sa alegi JurisProConsult?"
           subtitle="Peste 10 ani de experienta in servicii juridice si digitale pentru antreprenori din Romania."
         />
 

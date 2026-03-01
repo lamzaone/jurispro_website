@@ -26,7 +26,7 @@ const FAQ_ITEMS = [
     answer: 'Dupa finalizare, va oferim documentatia completa si va putem recomanda servicii de contabilitate. Ramanem la dispozitia dumneavoastra pentru orice modificari sau consultanta ulterioara.',
   },
   {
-    question: 'Ce diferentiaza JuridicConsult de alte firme?',
+    question: 'Ce diferentiaza JurisProConsult de alte firme?',
     answer: 'Experienta de peste 10 ani, transparenta totala in privinta costurilor, comunicare constanta si suport dupa finalizarea procesului. 98% dintre clientii nostri revin sau ne recomanda.',
   },
   {

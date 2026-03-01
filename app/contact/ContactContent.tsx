@@ -11,6 +11,7 @@ const SERVICE_OPTIONS = [
   'Infiintare PFA',
   'Modificari firma',
   'Consultanta juridica',
+  'Servicii Social Media',
   'Altele',
 ];
 
@@ -189,8 +190,8 @@ export default function ContactContent() {
                   </div>
                   <div>
                     <span className={styles.infoLabel}>Email</span>
-                    <a href="mailto:office@juridicconsult.ro" className={`${styles.infoValue} ${styles.infoLink}`}>
-                      office@juridicconsult.ro
+                    <a href="mailto:office@jurisproconsult.ro" className={`${styles.infoValue} ${styles.infoLink}`}>
+                      office@jurisproconsult.ro
                     </a>
                   </div>
                 </div>

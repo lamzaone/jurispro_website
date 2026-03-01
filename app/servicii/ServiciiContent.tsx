@@ -94,21 +94,6 @@ const SERVICES = [
     price: '200 RON / ora',
     timeline: 'La cerere',
   },
-  {
-    icon: <SocialMediaIcon />,
-    title: 'Servicii Social Media',
-    description: 'Strategie, continut si crestere reala pentru prezenta ta online pe Instagram, Facebook si TikTok.',
-    benefits: [
-      'Continut personalizat pentru brand',
-      'Video-uri scurte pentru impact maxim',
-      'Texte optimizate pentru engagement',
-      'Design profesional',
-      'Strategie de comunicare coerenta',
-    ],
-    price: 'De la 200 EUR / luna',
-    timeline: 'Continuu',
-    href: '/servicii/social-media',
-  },
 ];
 
 const STEPS = [

@@ -14,9 +14,9 @@ export default function Footer() {
           {/* Brand column */}
           <div className={styles.brand}>
             <div className={styles.logo}>
-              <span className={styles.logoIcon}>JC</span>
+              <span className={styles.logoIcon}>JP</span>
               <span className={styles.logoText}>
-                Juridic<span className={styles.logoAccent}>Consult</span>
+                JurisPro<span className={styles.logoAccent}>Consult</span>
               </span>
             </div>
             <p className={styles.brandDesc}>
@@ -29,8 +29,8 @@ export default function Footer() {
             <h4 className={styles.columnTitle}>Navigare</h4>
             <ul className={styles.linksList}>
               <li><Link href="/">Acasa</Link></li>
-              <li><Link href="/servicii">Servicii</Link></li>
-              <li><Link href="/servicii/social-media">Social Media</Link></li>
+              <li><Link href="/servicii">Servicii juridice</Link></li>
+              <li><Link href="/servicii/social-media">Servicii Social Media</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
@@ -43,7 +43,7 @@ export default function Footer() {
               <li><Link href="/servicii">Infiintare PFA</Link></li>
               <li><Link href="/servicii">Modificari firma</Link></li>
               <li><Link href="/servicii">Consultanta juridica</Link></li>
-              <li><Link href="/servicii/social-media">Social Media</Link></li>
+              <li><Link href="/servicii/social-media">Servicii Social Media</Link></li>
             </ul>
           </div>
 
@@ -53,7 +53,7 @@ export default function Footer() {
             <ul className={styles.contactList}>
               <li>
                 <span className={styles.contactLabel}>Email</span>
-                <a href="mailto:office@juridicconsult.ro">office@juridicconsult.ro</a>
+                <a href="mailto:office@jurisproconsult.ro">office@jurisproconsult.ro</a>
               </li>
               <li>
                 <span className={styles.contactLabel}>Telefon</span>
@@ -70,7 +70,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className={styles.bottomBar}>
           <p className={styles.copyright}>
-            &copy; {currentYear} JuridicConsult. Toate drepturile rezervate.
+            &copy; {currentYear} JurisProConsult. Toate drepturile rezervate.
           </p>
           <div className={styles.legalLinks}>
             <Link href="/">Politica de confidentialitate</Link>
