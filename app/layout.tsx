@@ -1,15 +1,15 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next';
-import { Playfair_Display, Inter } from 'next/font/google';
+import { Cormorant_Garamond, Inter } from 'next/font/google';
 import Navbar from '@/components/core/Navbar';
 import Footer from '@/components/core/Footer';
 import MouseEffect from '@/components/core/MouseEffect';
 
 import './globals.scss';
 
-const playfairDisplay = Playfair_Display({
+const cormorantGaramond = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-serif',
   display: 'swap',
 });
@@ -58,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ro" className={`${playfairDisplay.variable} ${inter.variable}`}>
+    <html lang="ro" className={`${cormorantGaramond.variable} ${inter.variable}`}>
       <body>
         <MouseEffect />
         <Navbar />
