@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next';
 import { Playfair_Display, Inter } from 'next/font/google';
 import Navbar from '@/components/core/Navbar';
 import Footer from '@/components/core/Footer';
+import MouseEffect from '@/components/core/MouseEffect';
 
 import './globals.scss';
 
@@ -59,6 +60,7 @@ export default function RootLayout({
   return (
     <html lang="ro" className={`${playfairDisplay.variable} ${inter.variable}`}>
       <body>
+        <MouseEffect />
         <Navbar />
         {children}
         <Footer />

@@ -26,12 +26,17 @@ body {
   font-size: $font-size-base;
   line-height: $line-height-normal;
   color: $color-text-primary;
-  background-color: $color-bg-primary;
+  background-color: #0D0D0D; // solid background under all transparent layers
   overflow-x: hidden;
 }
 
 // Typography base
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $font-serif;
   font-weight: $font-weight-bold;
   line-height: $line-height-tight;
@@ -50,7 +55,8 @@ a {
   transition: color $transition-base;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
