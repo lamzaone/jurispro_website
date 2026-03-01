@@ -62,10 +62,7 @@ export default function Hero() {
               Solicita oferta gratuita
             </PremiumButton>
             <PremiumButton href="/servicii" variant="outline" size="large">
-              Servicii juridice
-            </PremiumButton>
-            <PremiumButton href="/servicii/social-media" variant="outline" size="large">
-              Social Media
+              Descopera serviciile noastre
             </PremiumButton>
           </div>
 

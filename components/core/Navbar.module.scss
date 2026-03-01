@@ -34,19 +34,11 @@
   z-index: 10;
 }
 
-.logoIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.logoImage {
   width: 40px;
   height: 40px;
-  border-radius: $radius-md;
-  background: $gradient-gold;
-  color: $color-bg-primary;
-  font-family: $font-serif;
-  font-weight: $font-weight-bold;
-  font-size: $font-size-sm;
-  letter-spacing: 0.05em;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .logoText {
@@ -88,13 +80,6 @@
     left: 0;
     right: 0;
     height: 10px;
-  }
-
-  &:hover .submenu,
-  &:focus-within .submenu {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate(-50%, 0);
   }
 }
 
@@ -159,6 +144,12 @@
   pointer-events: none;
   transition: opacity $transition-base, transform $transition-base;
   z-index: $z-navbar + 1;
+}
+
+.submenuOpen {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
 }
 
 .submenuLink {

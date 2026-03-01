@@ -38,6 +38,11 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ro_RO',
   },
+  icons: {
+    icon: '/logo-nobg.png',
+    shortcut: '/logo-nobg.png',
+    apple: '/logo-nobg.png',
+  },
 };
 
 export const viewport: Viewport = {

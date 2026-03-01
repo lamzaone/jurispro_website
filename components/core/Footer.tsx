@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Footer.module.scss';
 
@@ -14,7 +15,13 @@ export default function Footer() {
           {/* Brand column */}
           <div className={styles.brand}>
             <div className={styles.logo}>
-              <span className={styles.logoIcon}>JP</span>
+              <Image
+                src="/logo-nobg.png"
+                alt="JurisProConsult logo"
+                width={36}
+                height={36}
+                className={styles.logoImage}
+              />
               <span className={styles.logoText}>
                 JurisPro<span className={styles.logoAccent}>Consult</span>
               </span>

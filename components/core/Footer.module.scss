@@ -40,18 +40,11 @@
   margin-bottom: $space-lg;
 }
 
-.logoIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.logoImage {
   width: 36px;
   height: 36px;
-  border-radius: $radius-md;
-  background: $gradient-gold;
-  color: $color-bg-primary;
-  font-family: $font-serif;
-  font-weight: $font-weight-bold;
-  font-size: $font-size-sm;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .logoText {

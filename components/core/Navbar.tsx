@@ -1,8 +1,9 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useScrollPosition } from '@/hooks/use-scroll-position';
 import styles from './Navbar.module.scss';
 
@@ -37,11 +38,35 @@ export default function Navbar() {
   const pathname = usePathname();
   const isScrolled = useScrollPosition(50);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const toggleMobile = () => setIsMobileOpen((prev) => !prev);
-  const closeMobile = () => setIsMobileOpen(false);
+  const closeMobile = () => {
+    setIsMobileOpen(false);
+    setActiveSubmenu(null);
+  };
+  const clearCloseTimer = () => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  };
+  const closeSubmenu = () => {
+    clearCloseTimer();
+    setActiveSubmenu(null);
+  };
+  const closeSubmenuWithDelay = (delayMs = 1000) => {
+    clearCloseTimer();
+    closeTimerRef.current = setTimeout(() => {
+      setActiveSubmenu(null);
+      closeTimerRef.current = null;
+    }, delayMs);
+  };
   const isLinkActive = (href: string) =>
     href === '/servicii' ? pathname.startsWith('/servicii') : pathname === href;
+
+  useEffect(() => () => clearCloseTimer(), []);
 
   return (
     <header
@@ -51,7 +76,14 @@ export default function Navbar() {
       <nav className={styles.navInner} aria-label="Navigare principala">
         {/* Logo */}
         <Link href="/" className={styles.logo} onClick={closeMobile}>
-          <span className={styles.logoIcon}>JP</span>
+          <Image
+            src="/logo-nobg.png"
+            alt="JurisProConsult logo"
+            width={40}
+            height={40}
+            className={styles.logoImage}
+            priority
+          />
           <span className={styles.logoText}>
             JurisPro<span className={styles.logoAccent}>Consult</span>
           </span>
@@ -63,21 +95,28 @@ export default function Navbar() {
             <li
               key={item.href}
               className={`${styles.navItem} ${item.submenu ? styles.navItemWithSubmenu : ''}`}
+              onMouseEnter={item.submenu ? () => setActiveSubmenu(item.href) : undefined}
+              onMouseLeave={item.submenu ? closeSubmenu : undefined}
             >
               <Link
                 href={item.href}
                 className={`${styles.navLink} ${isLinkActive(item.href) ? styles.active : ''}`}
+                onClick={closeSubmenu}
               >
                 {item.label}
                 <span className={styles.linkIndicator} />
               </Link>
               {item.submenu && (
-                <ul className={styles.submenu} aria-label={`${item.label} submeniu`}>
+                <ul
+                  className={`${styles.submenu} ${activeSubmenu === item.href ? styles.submenuOpen : ''}`}
+                  aria-label={`${item.label} submeniu`}
+                >
                   {item.submenu.map((subItem) => (
                     <li key={subItem.href}>
                       <Link
                         href={subItem.href}
                         className={`${styles.submenuLink} ${pathname === subItem.href ? styles.submenuActive : ''}`}
+                        onClick={() => closeSubmenuWithDelay(1000)}
                       >
                         {subItem.label}
                       </Link>
